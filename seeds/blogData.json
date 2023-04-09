@@ -1,11 +1,11 @@
 [
     {
-        "title": "Testing",
-        "content": "This is only a test."
+        "name": "Testing",
+        "description": "This is only a test."
     },
     {
-        "title": "Testing 2",
-        "content": "This is only a test 2."
+        "name": "Testing 2",
+        "description": "This is only a test 2."
     }
 
 ]
