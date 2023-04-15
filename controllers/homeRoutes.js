@@ -8,14 +8,14 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name'],
+                    attributes: ['username'],
                 },
             ],
         });
 
         const posts = postData.map((post) => post.get({ plain: true }));
 
-        res.render('homepage', {
+        res.render('dashboard', {
             postss,
             logged_in: req.session.logged_in
         });
@@ -30,7 +30,7 @@ router.get('/post/:id', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name'],
+                    attributes: ['username'],
                 },
             ],
         });
@@ -46,16 +46,16 @@ router.get('/post/:id', async (req, res) => {
     }
 });
 
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
     try {
       const userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
-        include: [{ model: Project }],
+        include: [{ model: Post }],
       });
   
       const user = userData.get({ plain: true });
   
-      res.render('profile', {
+      res.render('dashboard', {
         ...user,
         logged_in: true
       });
@@ -71,6 +71,15 @@ router.get('/profile', withAuth, async (req, res) => {
     }
   
     res.render('login');
+  });
+
+  router.get('/signup', (req, res) => {
+    if (req.session.logged_in) {
+      res.redirect('/dashboard');
+      return;
+    }
+  
+    res.render('signup');
   });
   
   module.exports = router;
