@@ -9,7 +9,7 @@
         {{#each posts as |post|}}
         <li>
             {{> post-info post}}
-            <a href="/posts/{{post.id}}/edit" class="edit-link">edit post</a>
+            <a href="/posts/{{post.id}}" class="edit-link">Edit post</a>
         </li> 
         {{/each}}
     </ul>
@@ -19,4 +19,4 @@
 <footer>
     <button>+ New Post</button>
 </footer>
-<script src="/js/dashboard"></script>
+<script src="./js/dashboard"></script>

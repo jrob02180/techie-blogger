@@ -4,16 +4,16 @@
 
 {{#if posts.length}}
 <section>
-    <h2>Your Dashboard</h2>
+    <h2>Techie Blogger</h2>
     <ul class="post-list">
         {{#each posts as |post|}}
         <li>
             {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}/edit" class="edit-link">edit post</a>
+            {{!-- <a href="/d/{{post.id}}" class="edit-link">Edit post</a> --}}
         </li> 
         {{/each}}
     </ul>
 </section>
 {{/if}}
 
-<script src="/js/dashboard"></script>
+{{!-- <script src="/dashboard"></script> --}}
