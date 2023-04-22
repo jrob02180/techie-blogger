@@ -1,13 +1,11 @@
 [
     {
         "name": "Testing",
-        "description": "This is only a test.",
-        "date_created": "2019-01-01T00:00:00.000Z"
+        "description": "This is only a test."
     },
     {
         "name": "Testing 2",
-        "description": "This is only a test 2.",
-        "date_created":"2019-01-01T00:00:00.000Z"
+        "description": "This is only a test 2."
     }
 
 ]

@@ -1,19 +1,18 @@
-<section class="new-post-section">
-    <button type="submit" class="btn" id="create-new post">Create a new post</button>
-</section>
-
+<h2>Techie Blogger</h2>
 {{#if posts.length}}
 <section>
-    <h2>Techie Blogger</h2>
     <ul class="post-list">
         {{#each posts as |post|}}
-        <li>
+        <ul>
             {{> post-info post}}
-            {{!-- <a href="/d/{{post.id}}" class="edit-link">Edit post</a> --}}
-        </li> 
+            <a href="/d/{{post.id}}" class="edit-link">Edit post</a>
+        </ul> 
         {{/each}}
     </ul>
 </section>
 {{/if}}
+<section class="new-post-section">
+    <button type="submit" class="btn" id="create-new post">Create a new post</button>
+</section>
 
 {{!-- <script src="/dashboard"></script> --}}

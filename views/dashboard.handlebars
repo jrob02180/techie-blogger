@@ -2,9 +2,9 @@
     <button type="submit" class="btn" id="create-new post">Create a new post</button>
 </section>
 
+<h2>Your Dashboard</h2>
 {{#if posts.length}}
 <section>
-    <h2>Your Dashboard</h2>
     <ul class="post-list">
         {{#each posts as |post|}}
         <li>
@@ -19,4 +19,4 @@
 <footer>
     <button>+ New Post</button>
 </footer>
-<script src="./js/dashboard"></script>
+{{!-- <script src="./js/dashboard"></script> --}}
